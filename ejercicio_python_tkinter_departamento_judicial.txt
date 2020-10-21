@@ -1,0 +1,65 @@
+Hacer una aplicación orientada a objetos con interface gráfica
+Tkinter para ubicar, en la provincia de Buenos Aires,  el juzgado 
+mas cercano a un punto geográfico ingresado como latitud y longitud
+La aplicación deberá mostrar en un mapa la ubicación del juzgado.
+
+Se tiene un archivo csv los datos como la ubicación de cada 
+departamento judicial:
+
+
+Generar una clase Dep_judicial
+
+Con los sig. atributos privados:
+
+__numero
+__fuero
+__nombre
+__tipo_de_ente
+__direccion
+__localidad
+__departamento_judicial
+__telefono
+__latitud
+__longitud
+
+Con los sig. métodos de acc.:
+
+get_numero()
+get_fuero()
+get_nombre()
+get_tipo_de_ente()
+get_direccion()
+get_localidad()
+get_departamento_judicial()
+get_telefono()
+get_latitud()
+get_longitud()
+
+Con los sig. métodos publicos:
+
+get_distancia(longitud,latitud)
+
+Con los métodos especiales que crean necesarios
+
+
+
+
+Obtener la distancia a un punto:
+def get_distancia(self, lat, lng):
+        return ((self.__latitud - lat) ** 2 + (self.__longitud - lng) ** 2) ** 0.5
+
+Obtener la imagen del mapa:
+
+url = "https://api.mapbox.com/styles/v1/mapbox/light-v10/static/{:f},{:f},14,12/500x500?access_token={:s}".format(
+            depto.get_longitud(), depto.get_latitud(), TOKEN_DEPARTAMENTO_JUDICIAL)
+r = requests.get(url)
+
+TOKEN_DEPARTAMENTO_JUDICIAL = "token privado de la cuenta de mapbox.com"
+
+
+
+
+
+
+
+
