@@ -79,14 +79,5 @@ def calcular_departamento_cercano(latitud,longitud):
             departamento_cercano = departamento # GUARDO EL JUZGADO
     return dicc_departamentos[departamento_cercano] # DEVUELVO EL OBJETO Dep_judicial
 
-def main():
-    juzgados = obtener_departamentos_judiciales()
-    lista=[]
-    for numero in juzgados.keys():
-        lista.append(numero)
-    print(lista)
-    print(len(lista))
 
-if __name__ == "__main__":
-    main()
 
